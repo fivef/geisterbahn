@@ -1,0 +1,20 @@
+#! /bin/sh
+# /etc/init.d/geisterbahn_startup
+
+touch /var/lock/geisterbahn_startup
+
+case "$1" in
+start)
+echo "Starting geisterbahn ... "
+~/dev/geisterbahn/usonic.py > /dev/null &
+;;
+stop)
+echo "Killing geisterbahn ..."
+killall usonic.py
+;;
+*)
+echo "Usage: /etc/init.d/geisterbahn_startup {start|stop}"
+exit 1
+;;
+esac
+exit 0
