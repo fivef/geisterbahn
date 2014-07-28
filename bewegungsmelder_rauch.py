@@ -9,7 +9,7 @@ from dmx import DMX
 # debounce dead time in ms
 debounce_time = 5000
 
-pir_input_pin = 18
+pir_input_pin = 23
 
 dmx = None
 
@@ -30,10 +30,8 @@ def movement_detected_callback(channel):
 	
 	print "Movement detected" 
 
-	dmx.lightening()
-	#dmx.smoke()
+	dmx.smoke()
 	
-
   	print "Waiting for movement..."
 
 
