@@ -23,7 +23,7 @@ def main():
   try:
     while True:
       Distance = MeasureDistance()
-      print("Measured Distance = %.1f cm" % Distance)
+      print("Measured Distance = {0:.1f} cm".format(Distance))
 
       if Distance <= TriggerDistance and time.time() - DeadTimeStart >= DeadTime:
          DeadTimeStart = time.time()
